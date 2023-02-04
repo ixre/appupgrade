@@ -34,3 +34,5 @@ flutter:
         pluginClass: AppupgradePlugin
       ios:
         pluginClass: AppupgradePlugin
+
+ 
