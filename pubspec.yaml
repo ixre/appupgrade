@@ -31,8 +31,7 @@ flutter:
     platforms:
       android:
         package: com.yanyi.tejia.plugin.appupgrade
-        pluginClass: AppupgradePlugin
+        pluginClass: AppupgradePlugin 
       ios:
-        pluginClass: AppupgradePlugin
-
- 
+        pluginClass: AppupgradePlugin 
+# 
