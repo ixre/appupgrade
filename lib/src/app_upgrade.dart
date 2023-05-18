@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:appupgrade/appupgrade.dart';
 
-import 'download_status.dart';
 import 'simple_app_upgrade.dart';
 
 ///
