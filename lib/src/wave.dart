@@ -8,10 +8,10 @@ class Wave extends StatefulWidget {
   final Axis direction;
 
   const Wave({
-    Key key,
-    @required this.value,
-    @required this.color,
-    @required this.direction,
+    Key? key,
+    required this.value,
+    required this.color,
+    required this.direction,
   }) : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class Wave extends StatefulWidget {
 }
 
 class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  AnimationController? _animationController;
 
   @override
   void initState() {
@@ -29,12 +29,12 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
       vsync: this,
       duration: Duration(seconds: 2),
     );
-    _animationController.repeat();
+    _animationController?.repeat();
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController?.dispose();
     super.dispose();
   }
 
@@ -42,7 +42,7 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: CurvedAnimation(
-        parent: _animationController,
+        parent: _animationController!,
         curve: Curves.easeInOut,
       ),
       builder: (context, child) => ClipPath(
@@ -50,7 +50,7 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
           color: widget.color,
         ),
         clipper: _WaveClipper(
-          animationValue: _animationController.value,
+          animationValue: _animationController!.value,
           value: widget.value,
           direction: widget.direction,
         ),
@@ -65,9 +65,9 @@ class _WaveClipper extends CustomClipper<Path> {
   final Axis direction;
 
   _WaveClipper({
-    @required this.animationValue,
-    @required this.value,
-    @required this.direction,
+    required this.animationValue,
+    required this.value,
+    required this.direction,
   });
 
   @override
