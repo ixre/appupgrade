@@ -55,17 +55,17 @@ class _LiquidLinearProgressIndicatorState
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: _LinearClipper(
-        radius: widget.borderRadius??0,
+        radius: widget.borderRadius ?? 0,
       ),
       child: CustomPaint(
         painter: _LinearPainter(
           color: widget._getBackgroundColor(context),
-          radius: widget.borderRadius??0,
+          radius: widget.borderRadius ?? 0,
         ),
         foregroundPainter: _LinearBorderPainter(
-          color: widget.borderColor!,
-          width: widget.borderWidth!,
-          radius: widget.borderRadius!,
+          color: widget.borderColor ?? Colors.black,
+          width: widget.borderWidth ?? 1,
+          radius: widget.borderRadius ?? 0,
         ),
         child: Stack(
           children: <Widget>[
